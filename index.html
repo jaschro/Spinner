@@ -20,10 +20,10 @@
 
         h1 {
             font-size: clamp(1.4rem, 5vw, 2.2rem);
-            color: #ffd700;
+            color: #c8b8e8;
             letter-spacing: 3px;
             text-transform: uppercase;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+            text-shadow: 0 0 30px rgba(200, 184, 232, 0.4);
             margin-bottom: 28px;
         }
 
@@ -42,8 +42,8 @@
             height: 0;
             border-left: 14px solid transparent;
             border-right: 14px solid transparent;
-            border-top: 28px solid #ffd700;
-            filter: drop-shadow(0 2px 6px rgba(255, 215, 0, 0.7));
+            border-top: 28px solid #a89cc8;
+            filter: drop-shadow(0 2px 6px rgba(168, 156, 200, 0.7));
             z-index: 10;
         }
 
@@ -61,20 +61,20 @@
             padding: 14px 60px;
             font-size: 1.2rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #ffd700, #ff8c00);
-            color: #16213e;
+            background: linear-gradient(135deg, #a89cc8, #7c6fa0);
+            color: #fff;
             border: none;
             border-radius: 50px;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 3px;
-            box-shadow: 0 4px 22px rgba(255, 140, 0, 0.45);
+            box-shadow: 0 4px 22px rgba(124, 111, 160, 0.45);
             transition: transform 0.15s, box-shadow 0.15s;
         }
 
         #spin-btn:hover:not(:disabled) {
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(255, 140, 0, 0.65);
+            box-shadow: 0 8px 30px rgba(124, 111, 160, 0.65);
         }
 
         #spin-btn:active:not(:disabled) {
@@ -93,9 +93,9 @@
             font-size: clamp(1.2rem, 4vw, 1.8rem);
             font-weight: 700;
             min-height: 2.4rem;
-            color: #ffd700;
+            color: #c8b8e8;
             text-align: center;
-            text-shadow: 0 0 24px rgba(255, 215, 0, 0.65);
+            text-shadow: 0 0 24px rgba(200, 184, 232, 0.65);
         }
 
         #error {
@@ -128,9 +128,9 @@
 <script>
 // ─── Segment colours ────────────────────────────────────────────────────────
 const COLORS = [
-    '#e74c3c', '#3498db', '#2ecc71', '#f1c40f', '#9b59b6',
-    '#1abc9c', '#e67e22', '#e91e63', '#00bcd4', '#8bc34a',
-    '#ff5722', '#673ab7', '#ffc107', '#607d8b', '#795548', '#009688'
+    '#FFB3BA', '#FFDAB9', '#FFFACD', '#C8F7C5', '#BAE1FF',
+    '#E8BAFF', '#FFD1DC', '#B5EAD7', '#C7CEEA', '#FDEBD0',
+    '#D4E6F1', '#D7BDE2', '#A9DFBF', '#FAD7A0', '#AED6F1', '#F9E4B7'
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -146,7 +146,7 @@ let spinning        = false;
 
 // ─── Canvas sizing ──────────────────────────────────────────────────────────
 function setSize() {
-    const size = Math.min(window.innerWidth - 48, 520);
+    const size = Math.min(window.innerWidth - 48, 416);
     canvas.width  = size;
     canvas.height = size;
     drawWheel();
@@ -245,10 +245,10 @@ function drawWheel() {
         ctx.rotate(mid);
         ctx.textAlign    = 'right';
         ctx.textBaseline = 'middle';
-        ctx.fillStyle    = '#fff';
+        ctx.fillStyle    = '#444';
         ctx.font         = `bold ${fontSize}px Segoe UI`;
-        ctx.shadowColor  = 'rgba(0,0,0,0.6)';
-        ctx.shadowBlur   = 4;
+        ctx.shadowColor  = 'rgba(255,255,255,0.4)';
+        ctx.shadowBlur   = 2;
         ctx.fillText(item.label, outerR - 14, 0);
         ctx.restore();
 
@@ -267,14 +267,14 @@ function drawWheel() {
     ctx.arc(cx, cy, hubR, 0, 2 * Math.PI);
     ctx.fillStyle   = '#16213e';
     ctx.fill();
-    ctx.strokeStyle = '#ffd700';
+    ctx.strokeStyle = '#a89cc8';
     ctx.lineWidth   = 3;
     ctx.stroke();
 
     // Centre pin
     ctx.beginPath();
     ctx.arc(cx, cy, 7, 0, 2 * Math.PI);
-    ctx.fillStyle = '#ffd700';
+    ctx.fillStyle = '#a89cc8';
     ctx.fill();
 }
 
