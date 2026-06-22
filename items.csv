@@ -1,0 +1,12 @@
+# Spinner items — edit this file to change the wheel.
+# Format: Label,Weight
+# Weights don't need to add up to 100; they're relative to each other.
+# A weight of 30 is twice as likely to land as a weight of 15.
+# Lines starting with # are ignored.
+
+Pizza,25
+Burgers,20
+Sushi,15
+Tacos,20
+Salad,10
+Ramen,10
